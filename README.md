@@ -11,8 +11,8 @@ Insertion Sort
 
 **Technologies Used**
 
-HTML
-CSS
+HTML,
+CSS,
 JS
 
 Our motive is to make easy to understand the concept of sorting algorithms through visualization.
