@@ -17,4 +17,3 @@ JS
 
 Our motive is to make easy to understand the concept of sorting algorithms through visualization.
 
-sorting-visualizer247.netlify.app
