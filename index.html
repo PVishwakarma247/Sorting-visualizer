@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style1.css">
+</head>
+<header>
+    <h3 align="center">SORTING ALGORITHMS VISUALIZER</h3>
+    <nav>
+        <div class="row">
+            <div onclick=hidesidebar() class="sidebar">
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#FFFFFF">
+                        <path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z" />
+                    </svg>
+                </a>
+                <button type="button" class="btn btn-outline-primary btn-dark bubbleSort1">Bubble Sort</button>
+                <button type="button" class="btn btn-outline-primary btn-dark selectionSort1">Selection Sort</button>
+                <button type="button" class="btn btn-outline-primary btn-dark insertionSort1">Insertion Sort</button>
+                <button type="button" class="btn btn-outline-primary btn-dark quickSort1">Quick Sort</button>
+                <button type="button" class="btn btn-outline-primary btn-dark mergeSort1">Merge Sort</button>
+            </div>
+            <div class="row">
+                <div class="col gap-2 d-sm-flex justify-content-end" id="Sort">
+                    <button type="button" class="btn btn-outline-primary btn-dark bubbleSort">Bubble Sort</button>
+                    <button type="button" class="btn btn-outline-primary btn-dark selectionSort">Selection Sort</button>
+                    <button type="button" class="btn btn-outline-primary btn-dark insertionSort">Insertion Sort</button>
+                    <button type="button" class="btn btn-outline-primary btn-dark quickSort">Quick Sort</button>
+                    <button type="button" class="btn btn-outline-primary btn-dark mergeSort">Merge Sort</button>
+                </div>
+                <div class="col gap-2 d-sm-flex" id="newArray">
+                    <button type="button" class="btn btn-outline-success btn-dark newArray">New Array</button>
+                </div>
+                <a onclick=showsidebar() class="menubtn" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#FFFFFF">
+                        <path
+                            d="M480-160q-33 0-56.5-23.5T400-240q0-33 23.5-56.5T480-320q33 0 56.5 23.5T560-240q0 33-23.5 56.5T480-160Zm0-240q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm0-240q-33 0-56.5-23.5T400-720q0-33 23.5-56.5T480-800q33 0 56.5 23.5T560-720q0 33-23.5 56.5T480-640Z" />
+                    </svg>
+                </a>
+            </div>
+    </nav>
+</header>
+<div class="col" id="input">
+    <span class="size">
+        <div class="range">
+            <input id="arr_sz" type="range" min="5" max="50" step=1 value=60>
+        </div>
+        <div class="value">50</div>
+    </span>
+    <span class="speed">
+        <div class="quick">
+            <input id="speed_input" type="range" min="20" max="300" stepDown=10 value=60>
+        </div>
+        <div class="ok">Speed</div>
+    </span>
+</div>
+
+<body class="p-3 mb-2 bg-dark text-white">
+
+    <div id="bars" class="flex-container"></div>
+
+    <script src="sorting.js"></script>
+    <script src="bubble.js"></script>
+    <script src="insertion.js"></script>
+    <script src="merge.js"></script>
+    <script src="quick.js"></script>
+    <script src="selection.js"></script>
+    <script>
+        function showsidebar() {
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display = 'flex'
+        }
+        function hidesidebar() {
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display = 'none'
+        }
+        const slider = document.querySelector("input");
+        const value = document.querySelector(".value");
+        value.textContent = slider.value;
+        slider.oninput = function () {
+            value.textContent = this.value;
+        }
+    </script>
+</body>
+
+</html>
